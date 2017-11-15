@@ -38,9 +38,23 @@ var employees = [{
 
 // Code here
 
+function employeeUpdater(obj){
+  for (var i=0; i < employees.length; i++){
+    var obj = employees[i];
+    for (var prop in obj){
+      // console.log(obj[prop])
+      if (obj[prop]==="Theo"){
+        employees.splice(i,1)
+      }
+      if (obj[prop]==="Lorie"){
+        obj['department']="HR"
+      }
+    }
+  }
+  return employees
+}
 
-
-
+employeeUpdater(employees)
 
 
 
@@ -56,9 +70,24 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 
 // Code here
 
+// function removeDuplicates(arr){
+//   for(var i=0; i < arr.length; i++){
+//     for(var j=i+1; j < arr.length; j++){
+//       if(arr[i] === arr[j]){
+//         arr.splice(i, 1)
+//         i--
+//       }
+//     }
+//   }
+// }
 
 
 
+function removeDuplicates(arr){
+  var result = arr.filter((item,index) => index === arr.indexOf(item))
+}
+
+removeDuplicates(workplaceAccidents)
 
 
 
